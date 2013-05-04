@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def index
-    Twitter.update('Hello world from my rails app!')
+    @tweets = Twitter.home_timeline
   end
 
   def show

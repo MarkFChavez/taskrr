@@ -8,7 +8,53 @@
 </head>
 <body>
 
-<%= yield %>
+<div class="container-fluid">
+	<div class="row-fluid">	
+		<div class="span12">
+			<div class="navbar">
+				<div class="navbar-inner">
+					<a class="brand" href="#">Taskrrr</a>
+					<ul class="nav">
+						<li class="active"><a href="#">Home</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row-fluid">
+		<div class="span12">
+			<% if notice %>
+				<div class="alert alert-success"> <%= notice %> </div>
+			<% end %>
+
+			<% if alert %>
+				<div class="alert alert-error"> <%= alert %>
+			<% end %>
+		</div>
+	</div>
+
+	<div class="row-fluid">
+		<div class="span9">
+			<%= yield %>
+		</div>
+
+		<div class="span3">
+			<div style="border-left:1px solid #CCC;padding:10px;height:500px;overflow:scroll">
+				<% @tweets.each do |tweet| %>
+					<div style="margin-top:10px">
+						<span class="badge badge-info"> <%= "@#{tweet.user.screen_name}" %> </span> <br />
+						<div style="margin-left:10px;margin-top:5px">
+							<p class="muted" style="font-style:italic">
+								<%= tweet.text %>
+							</p>
+						</div>
+					</div>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>
 
 </body>
 </html>
