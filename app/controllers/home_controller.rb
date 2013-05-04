@@ -1,6 +1,9 @@
 class HomeController < ApplicationController
+
+  before_filter :get_tweets
+
   def index
-    @tweets = Twitter.home_timeline
+
   end
 
   def show
@@ -19,5 +22,9 @@ class HomeController < ApplicationController
   end
 
   def destroy
+  end
+
+  def get_tweets
+    @tweets = Twitter.home_timeline(:count => 10)
   end
 end
