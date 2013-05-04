@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
   def index
+    Twitter.update('Hello world from my rails app!')
   end
 
   def show
