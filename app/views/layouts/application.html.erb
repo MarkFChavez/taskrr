@@ -44,12 +44,18 @@
 		<div class="span4">
 			<div style="border-left:1px solid #CCC;padding:10px;height:500px;overflow:scroll">
 				<% @tweets.each do |tweet| %>
-					<div style="margin-top:10px">
-						<span class="badge badge-info"> <%= "@#{tweet.user.screen_name}" %> </span> <br />
-						<div style="margin-left:10px;margin-top:5px">
-							<p style="font-style:italic">
-								<%= tweet.text %>
-							</p>
+					<div style="margin-top:20px">
+						<div class="row-fluid">
+							<div class="span12">
+								<%= image_tag tweet.profile_image_url, :class => 'pull-right img-circle' %>
+			
+								<span class="badge badge-info"> <%= "@#{tweet.user.screen_name}" %> </span> <br />
+								<div style="margin-left:10px;margin-top:5px">
+									<p style="font-style:italic">
+										<%= tweet.text %>
+									</p>
+								</div>
+							</div>
 						</div>
 					</div>
 				<% end %>

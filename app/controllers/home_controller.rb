@@ -3,7 +3,7 @@ class HomeController < ApplicationController
   before_filter :get_tweets, :err_occurred
 
   def index
-
+    
   end
 
   def show
