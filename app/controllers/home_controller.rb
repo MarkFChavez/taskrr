@@ -27,7 +27,7 @@ class HomeController < ApplicationController
   private 
 
   def get_tweets
-    @tweets = Twitter.search("#manilajs", :count => 10).results
+    @tweets = Twitter.search("#WebGeekMeetup", :count => 10).results
   end
 
   def err_occurred
